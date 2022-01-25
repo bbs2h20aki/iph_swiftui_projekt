@@ -11,6 +11,7 @@
 		A2744CAB279E935D0050DE82 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2744CAA279E935D0050DE82 /* ContentView.swift */; };
 		A2744CAD279E935F0050DE82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2744CAC279E935F0050DE82 /* Assets.xcassets */; };
 		A2744CB0279E935F0050DE82 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2744CAF279E935F0050DE82 /* Preview Assets.xcassets */; };
+		A2EF6099279FDF7E0073901D /* books.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2EF6098279FDF7E0073901D /* books.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		A2744CAC279E935F0050DE82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2744CAF279E935F0050DE82 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A2744CB1279E935F0050DE82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2EF6098279FDF7E0073901D /* books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = books.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				A2744CA8279E935D0050DE82 /* swiftui_projektApp.swift */,
 				A2744CAA279E935D0050DE82 /* ContentView.swift */,
+				A2EF6098279FDF7E0073901D /* books.swift */,
 				A2744CAC279E935F0050DE82 /* Assets.xcassets */,
 				A2744CB1279E935F0050DE82 /* Info.plist */,
 				A2744CAE279E935F0050DE82 /* Preview Content */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2744CAB279E935D0050DE82 /* ContentView.swift in Sources */,
+				A2EF6099279FDF7E0073901D /* books.swift in Sources */,
 				A2744CA9279E935D0050DE82 /* swiftui_projektApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
