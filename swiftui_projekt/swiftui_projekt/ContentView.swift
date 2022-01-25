@@ -8,14 +8,14 @@
 import SwiftUI
 
 
-struct button:ViewModifier {
+struct cbutton:ViewModifier {
     let bg:Color?
     
     func body(content: Content) -> some View {
         content
             .padding()
             .background(bg)
-            .clipShape(Circle())
+            .clipShape(RoundedRectangle(cornerRadius: 25))
             .foregroundColor(.black)
     }
 }
@@ -23,7 +23,7 @@ struct button:ViewModifier {
 extension View {
     func makebutton(bg: Color?) -> some View {
         self
-            .modifier(button(bg: bg))
+            .modifier(cbutton(bg: bg))
     }
 }
 
@@ -33,9 +33,21 @@ extension View {
 
 
 struct ContentView: View {
+    @State var buttonbackground: [Color] = [.red,.green,.blue,.yellow,.gray,.orange,.pink,.purple]
+    private let alingnment:[Alignment] = [.leading,.center,.trailing]
     
     var body: some View {
-        
+        VStack(spacing: 30){
+                Button(action: shufflebuttonbackground){
+                    Text("Start")
+                        .makebutton(bg: buttonbackground.randomElement())
+                        .frame(width: 200, alignment: alingnment[1])
+                
+            }
+        }
+}
+    func shufflebuttonbackground() {
+        buttonbackground.shuffle()
     }
 }
 struct ContentView_Previews: PreviewProvider {
@@ -43,3 +55,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
