@@ -6,39 +6,36 @@
 //
 
 import SwiftUI
+
+
+struct button:ViewModifier {
+    let bg:Color?
+    
+    func body(content: Content) -> some View {
+        content
+            .padding()
+            .background(bg)
+            .clipShape(Circle())
+            .foregroundColor(.black)
+    }
+}
+
+extension View {
+    func makebutton(bg: Color?) -> some View {
+        self
+            .modifier(button(bg: bg))
+    }
+}
+
+
+
+
+
+
 struct ContentView: View {
     
-    @State var books = [Book]()
-    
     var body: some View {
-        List(books) { book in
-            
-            VStack(alignment: .leading) {
-                
-                Text("\(book.title)")
-                    .font(.title)
-                    .foregroundColor(.red)
-                    .padding(.bottom)
-                
-                
-                HStack{
-                    Text("\(book.author)")
-                        .font(.body)
-                        .fontWeight(.bold)
-                        
-                    Text("\(book.email)")
-                        .font(.body)
-                        .fontWeight(.semibold)
-                }
-                Spacer()
-            }
-            
-        }
-            .onAppear() {
-                Api().loadData { (books) in
-                    self.books = books
-                }
-            }.navigationTitle("Book List")
+        
     }
 }
 struct ContentView_Previews: PreviewProvider {
