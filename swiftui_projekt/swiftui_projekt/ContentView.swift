@@ -36,10 +36,11 @@ struct ContentView: View {
     @State var buttonbackground: [Color] = [.red,.green,.blue,.yellow,.gray,.orange,.pink,.purple]
     private let alingnment:[Alignment] = [.leading,.center,.trailing]
     private let images:[UIImage] = [#imageLiteral(resourceName: "fry3"),#imageLiteral(resourceName: "fry2"),#imageLiteral(resourceName: "fry"),#imageLiteral(resourceName: "images"),#imageLiteral(resourceName: "a2891e099e8df26fd09b5567ab171051")]
+    @State var ImageName = ["fry","fry2","fry3","ron1","ron2"]
     
     var body: some View {
         VStack(){
-            Image(uiImage: images[0])
+            Image(systemName: self.ImageName)
         VStack(spacing:30){
                 Button(action: shufflebuttonbackground){
                     Text("Start")
@@ -76,7 +77,7 @@ struct ContentView: View {
     
     
     func showgif(){
-        
+        self.ImageName = ImageName.randomElement()
     }
 }
 struct ContentView_Previews: PreviewProvider {
