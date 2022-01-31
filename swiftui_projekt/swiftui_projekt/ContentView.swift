@@ -35,19 +35,48 @@ extension View {
 struct ContentView: View {
     @State var buttonbackground: [Color] = [.red,.green,.blue,.yellow,.gray,.orange,.pink,.purple]
     private let alingnment:[Alignment] = [.leading,.center,.trailing]
+    private let images:[UIImage] = [#imageLiteral(resourceName: "fry3"),#imageLiteral(resourceName: "fry2"),#imageLiteral(resourceName: "fry"),#imageLiteral(resourceName: "images"),#imageLiteral(resourceName: "a2891e099e8df26fd09b5567ab171051")]
     
     var body: some View {
-        VStack(spacing: 30){
+        VStack(){
+            Image(uiImage: images[0])
+        VStack(spacing:30){
                 Button(action: shufflebuttonbackground){
                     Text("Start")
                         .makebutton(bg: buttonbackground.randomElement())
                         .frame(width: 200, alignment: alingnment[1])
                 
             }
+            HStack(){
+                Button(action: showgif ){
+                    Text("Gif1")
+                        .makebutton(bg: buttonbackground.randomElement())
+                        .frame(width: 100, alignment: .leading)
+                        
+                }
+                    Button(action: showgif ){
+                        Text("Gif2")
+                            .makebutton(bg: buttonbackground.randomElement())
+                            .frame(width: 100, alignment: .trailing)
+                            
+                    }
+            }
+            
         }
+        .frame(alignment:.center)
+        }
+        
 }
     func shufflebuttonbackground() {
         buttonbackground.shuffle()
+        
+       
+    }
+    
+    
+    
+    func showgif(){
+        
     }
 }
 struct ContentView_Previews: PreviewProvider {
